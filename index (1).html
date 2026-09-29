@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taylor Pels-Hernandez | Social Media & Marketing</title>
+<meta name="description" content="Taylor Pels-Hernandez — social media manager and marketing coordinator in Fort Worth, Texas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lagoon:#00AFB5;
+    --lagoon-deep:#008A90;
+    --hibiscus:#FF4F8B;
+    --mango:#FFB627;
+    --shell:#FFE3EC;
+    --seafoam:#DDF7F2;
+    --sand:#FFF1D6;
+    --deep:#0B3C5D;
+    --white:#FFFFFF;
+    --display:"Shrikhand", "Cooper Black", Georgia, serif;
+    --body:"Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--deep);background:var(--white);line-height:1.6;font-size:1.0625rem}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--hibiscus);outline-offset:3px;border-radius:4px}
+
+  /* ---------- Nav ---------- */
+  .nav{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:3px solid var(--mango)}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .logo{font-family:var(--display);font-size:1.5rem;color:var(--hibiscus);text-decoration:none;line-height:1}
+  .nav ul{list-style:none;display:flex;gap:.25rem;flex-wrap:wrap}
+  .nav a.link{text-decoration:none;font-weight:600;font-size:.95rem;padding:.45rem .8rem;border-radius:999px;display:block}
+  .nav a.link:hover{background:var(--seafoam)}
+  .nav a.link[aria-current="page"]{background:var(--lagoon);color:var(--white)}
+  .menu-btn{display:none;background:none;border:2px solid var(--deep);border-radius:999px;padding:.35rem .9rem;font:600 .95rem var(--body);color:var(--deep);cursor:pointer}
+  @media (max-width:820px){
+    .menu-btn{display:block}
+    .nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--white);flex-direction:column;padding:.5rem 1.25rem 1rem;border-bottom:3px solid var(--mango)}
+    .nav ul.open{display:flex}
+  }
+
+  /* ---------- Pages ---------- */
+  .page{display:none}
+  .page.active{display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+  section.band{padding:4.5rem 0}
+  h1,h2,h3{line-height:1.15}
+  h2.title{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--hibiscus);margin-bottom:.75rem}
+  .lede{font-size:1.2rem;max-width:60ch;margin-bottom:2.5rem}
+  .wave{display:block;width:100%;height:60px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--shell);position:relative;overflow:hidden}
+  .hero-inner{max-width:var(--max);margin:0 auto;padding:4rem 1.25rem 0;display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:center;position:relative;z-index:2}
+  .sun{position:absolute;width:min(520px,70vw);aspect-ratio:1;border-radius:50%;background:var(--mango);right:-60px;top:40px;z-index:1}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,9vw,6.5rem);color:var(--deep);line-height:.95;letter-spacing:-.01em}
+  .hero h1 span{display:block;color:var(--hibiscus)}
+  .hero p.tag{font-size:1.3rem;margin:1.25rem 0 2rem;max-width:32ch;font-weight:500}
+  .btns{display:flex;gap:.75rem;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;padding:.85rem 1.4rem;border-radius:999px;border:3px solid var(--deep);background:var(--white);color:var(--deep);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--deep);color:var(--white)}
+  .photo{justify-self:center;width:min(340px,80%);aspect-ratio:4/5;border-radius:200px 200px 24px 24px;border:6px solid var(--white);background:var(--lagoon);overflow:hidden;display:grid;place-items:center;color:var(--white);font-weight:600;text-align:center;padding:1rem;box-shadow:12px 12px 0 var(--hibiscus)}
+  .photo img{width:100%;height:100%;object-fit:cover}
+  .waves{position:relative;z-index:2;margin-top:3rem;line-height:0}
+  .waves svg{width:100%;height:110px;display:block}
+  @media (prefers-reduced-motion:no-preference){
+    .waves .w1{animation:drift 9s ease-in-out infinite alternate}
+    @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-40px)}}
+  }
+  @media (max-width:820px){
+    .hero-inner{grid-template-columns:1fr;padding-top:2.5rem}
+    .photo{order:-1;width:min(240px,70%)}
+    .sun{right:-120px;top:-40px}
+  }
+
+  /* ---------- About / home ---------- */
+  .about{background:var(--lagoon);color:var(--white)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+  .about h2.title{color:var(--white)}
+  .about p{max-width:60ch;margin-bottom:1rem}
+  .work-links{display:grid;gap:1rem}
+  .work-link{display:block;text-decoration:none;background:var(--white);color:var(--deep);padding:1.25rem 1.5rem;border-radius:18px;border-left:10px solid var(--mango)}
+  .work-link:nth-child(2){border-left-color:var(--hibiscus)}
+  .work-link:nth-child(3){border-left-color:var(--deep)}
+  .work-link strong{display:block;font-size:1.2rem}
+  .work-link:hover{background:var(--sand)}
+  @media (max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+  /* ---------- Experience ---------- */
+  .timeline{list-style:none;border-left:4px dashed var(--lagoon);margin-left:.5rem;padding-left:2rem;display:grid;gap:2.25rem}
+  .timeline li{position:relative}
+  .timeline li::before{content:"";position:absolute;left:calc(-2rem - 12px);top:.35rem;width:20px;height:20px;border-radius:50%;background:var(--mango);border:4px solid var(--white);box-shadow:0 0 0 2px var(--lagoon)}
+  .timeline h3{font-size:1.3rem}
+  .timeline .where{font-weight:600;color:var(--lagoon-deep)}
+  .timeline .when{font-size:.95rem;opacity:.8;margin-bottom:.4rem}
+  .timeline p{max-width:65ch}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+  .fact{background:var(--seafoam);border-radius:24px;padding:1.75rem}
+  .fact:nth-child(2){background:var(--shell)}
+  .fact:nth-child(3){background:var(--sand)}
+  .fact h3{font-family:var(--display);font-weight:400;font-size:1.6rem;margin-bottom:.75rem;color:var(--deep)}
+  .fact ul{list-style:none;display:grid;gap:.7rem}
+  .fact small{display:block;opacity:.8}
+  @media (max-width:900px){.facts{grid-template-columns:1fr}}
+
+  /* ---------- Analytics ---------- */
+  .reel{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:2.5rem;align-items:start;padding:2.5rem 0;border-top:3px solid var(--seafoam)}
+  .reel:first-of-type{border-top:0}
+  .reel h3{font-family:var(--display);font-weight:400;font-size:1.8rem;color:var(--hibiscus);margin-bottom:.5rem}
+  .reel .embed{width:100%}
+  .reel .embed .instagram-media{min-width:0!important;width:100%!important;margin:0!important}
+  .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem;margin-top:1.25rem}
+  .stat{background:var(--seafoam);border-radius:18px;padding:1rem 1.2rem}
+  .stat:nth-child(3n+2){background:var(--shell)}
+  .stat:nth-child(3n){background:var(--sand)}
+  .stat b{display:block;font-size:2rem;line-height:1.1}
+  .stat span{font-size:.95rem}
+  @media (max-width:820px){.reel{grid-template-columns:1fr}}
+
+  /* ---------- Chadra ---------- */
+  .chadra-head{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem}
+  .chadra-head .lede{margin-bottom:0}
+  .feed{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:720px;margin:0 auto;border-radius:18px;overflow:hidden}
+  .feed .tile{aspect-ratio:4/5;background:var(--sand);display:grid;place-items:center;font-size:.9rem;font-weight:600;color:var(--deep);opacity:.9}
+  .feed .tile:nth-child(odd){background:var(--seafoam)}
+  .feed img{width:100%;height:100%;object-fit:cover}
+  .profile-card{max-width:720px;margin:0 auto 6px;display:flex;align-items:center;gap:1rem;padding:1rem 0}
+  .avatar{width:64px;height:64px;border-radius:50%;background:var(--lagoon);border:3px solid var(--hibiscus);flex:none;overflow:hidden}
+
+  /* ---------- Emails ---------- */
+  .emails{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+  .email{display:flex;flex-direction:column;text-decoration:none;color:var(--deep)}
+  .email .frame{background:var(--white);border:3px solid var(--deep);border-radius:22px;overflow:hidden;box-shadow:8px 8px 0 var(--lagoon);transition:transform .15s, box-shadow .15s}
+  .email:nth-child(2) .frame{box-shadow:8px 8px 0 var(--hibiscus)}
+  .email:nth-child(3) .frame{box-shadow:8px 8px 0 var(--mango)}
+  .email:hover .frame{transform:translate(-3px,-3px)}
+  .email .bar{display:flex;gap:6px;padding:.6rem .9rem;border-bottom:3px solid var(--deep);background:var(--seafoam)}
+  .email .bar i{width:10px;height:10px;border-radius:50%;background:var(--deep);opacity:.4}
+  .email .shot{aspect-ratio:4/3;background:var(--sand);display:grid;place-items:center}
+  .email .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .email h3{font-size:1.2rem;margin-top:1.2rem}
+  .email p{font-size:.98rem}
+  .email .view{font-weight:700;color:var(--lagoon-deep);margin-top:.4rem;text-decoration:underline;text-underline-offset:3px}
+  @media (max-width:900px){.emails{grid-template-columns:1fr;max-width:460px}}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--hibiscus);color:var(--white);text-align:center}
+  .contact h2.title{color:var(--white)}
+  .contact .lede{margin:0 auto 2rem}
+  .contact .btn{border-color:var(--white)}
+  .contact .btn.primary{background:var(--white);color:var(--hibiscus)}
+
+  footer{background:var(--deep);color:var(--white);padding:2rem 1.25rem;text-align:center;font-size:.95rem}
+  footer a{color:var(--mango)}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="logo" href="#home">Taylor P-H</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a class="link" href="#home">Home</a></li>
+      <li><a class="link" href="#experience">Experience</a></li>
+      <li><a class="link" href="#analytics">Analytics</a></li>
+      <li><a class="link" href="#chadra">Chadra</a></li>
+      <li><a class="link" href="#emails">Email design</a></li>
+      <li><a class="link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<!-- =============== HOME =============== -->
+<div class="page" id="page-home">
+  <header class="hero">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div>
+        <h1>Taylor <span>Pels-Hernandez</span></h1>
+        <p class="tag">Social media and marketing for brands that want to feel like a day at the beach.</p>
+        <div class="btns">
+          <a class="btn primary" href="#analytics">See my work</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="photo" id="photo">
+        <!-- Swap this text for: <img src="images/taylor.jpg" alt="Taylor Pels-Hernandez"> -->
+        Photo coming soon
+      </div>
+    </div>
+    <div class="waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none">
+        <path class="w1" fill="#DDF7F2" d="M0,60 C180,10 360,110 540,60 C720,10 900,110 1080,60 C1260,10 1440,90 1500,60 L1500,110 L0,110 Z"/>
+        <path fill="#00AFB5" d="M0,80 C200,40 400,120 620,80 C840,40 1040,115 1240,80 C1340,62 1400,70 1440,76 L1440,110 L0,110 Z"/>
+      </svg>
+    </div>
+  </header>
+
+  <section class="band about">
+    <div class="wrap about-grid">
+      <div>
+        <h2 class="title">Hi, I'm Taylor</h2>
+        <p>I'm a Fort Worth marketer who has been running social media accounts since 2020. Today I'm the marketing coordinator at the Fort Worth Museum of Science and History, where I build campaigns, emails, and social content that get people through the doors.</p>
+        <p>I studied marketing at the University of North Texas, and I love bright colors, a strong brand voice, and content that makes people stop scrolling.</p>
+      </div>
+      <div class="work-links">
+        <a class="work-link" href="#analytics"><strong>Reel analytics</strong>Views, reach, and engagement from recent reels</a>
+        <a class="work-link" href="#chadra"><strong>Chadra Mezza &amp; Grill</strong>The Instagram feed I run for a local restaurant</a>
+        <a class="work-link" href="#emails"><strong>Email design</strong>Newsletters and promos for the Museum</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =============== EXPERIENCE =============== -->
+<div class="page" id="page-experience">
+  <section class="band">
+    <div class="wrap">
+      <h2 class="title">Experience</h2>
+      <p class="lede">Six years of social media and marketing work across nonprofits, local government, small business, and a museum.</p>
+      <ol class="timeline">
+        <li>
+          <h3>Marketing Coordinator</h3>
+          <div class="where">Fort Worth Museum of Science and History</div>
+          <div class="when">Nov 2025 to present</div>
+          <p>Create and manage marketing campaigns, social media content, email communications, and promotional materials that build awareness of museum exhibits, programs, and events.</p>
+        </li>
+        <li>
+          <h3>NextGen Ambassador</h3>
+          <div class="where">City of Fort Worth Water Department</div>
+          <div class="when">Jun 2025 to Aug 2025</div>
+          <p>Created social media graphics promoting water conservation, played a key role in planning a community event, and supported residents in a high-volume call center.</p>
+        </li>
+        <li>
+          <h3>Marketing Intern</h3>
+          <div class="where">empowerHER, remote</div>
+          <div class="when">Jan 2023 to Jun 2023</div>
+          <p>Guided a rebrand that sharpened the organization's image, grew visibility with its target audience, and deepened engagement with supporters and stakeholders.</p>
+        </li>
+        <li>
+          <h3>Social Media Manager</h3>
+          <div class="where">The N2 Company, Fort Worth</div>
+          <div class="when">Jun 2021 to Mar 2023</div>
+          <p>Oversaw account design across platforms, from cover images to blog layouts. Worked with other teams on brand consistency, audited the digital marketing plan, and recommended improvements.</p>
+        </li>
+        <li>
+          <h3>Social Media Manager</h3>
+          <div class="where">Sun Lily Enterprises, Fort Worth</div>
+          <div class="when">May 2020 to present</div>
+          <p>Design and run social media strategy aligned with business goals, track platform trends, and keep leadership informed of changes that affect marketing.</p>
+        </li>
+      </ol>
+
+      <div class="facts">
+        <div class="fact">
+          <h3>Education</h3>
+          <ul>
+            <li>BA in Business Administration, Marketing<small>University of North Texas, 2025</small></li>
+            <li>Associate of Arts<small>Tarrant County College, 2023</small></li>
+          </ul>
+        </div>
+        <div class="fact">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Marketing Innovations: Products &amp; Services<small>University of Maryland</small></li>
+            <li>Online Advertising &amp; Social Media<small>University of Maryland</small></li>
+          </ul>
+        </div>
+        <div class="fact">
+          <h3>Community</h3>
+          <ul>
+            <li>Board Member, Hispanic Women's Network of Texas<small>2022 to present</small></li>
+            <li>House Parent, The Warm Place<small>2025 to present</small></li>
+            <li>MANA de North Texas, empowerHER, Delta Gamma, UNT Women in Business, MOVE Texas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =============== ANALYTICS =============== -->
+<div class="page" id="page-analytics">
+  <section class="band">
+    <div class="wrap">
+      <h2 class="title">Analytics</h2>
+      <p class="lede">A look at how recent reels performed, with the numbers straight from Instagram Insights.</p>
+      <div id="reels"></div>
+    </div>
+  </section>
+</div>
+
+<!-- =============== CHADRA =============== -->
+<div class="page" id="page-chadra">
+  <section class="band" style="background:var(--sand)">
+    <div class="wrap">
+      <div class="chadra-head">
+        <div>
+          <h2 class="title">Chadra Mezza &amp; Grill</h2>
+          <p class="lede">I run the Instagram for Chadra, a family-owned Lebanese and Mediterranean restaurant on Park Place Avenue in Fort Worth's Near Southside. Here's how the feed comes together.</p>
+        </div>
+        <a class="btn primary" href="https://www.instagram.com/chadramezza/" target="_blank" rel="noopener">Visit @chadramezza</a>
+      </div>
+      <div class="profile-card">
+        <div class="avatar" aria-hidden="true"></div>
+        <div><strong>@chadramezza</strong><br>Chadra Mezza &amp; Grill, Fort Worth</div>
+      </div>
+      <div class="feed" id="feed"></div>
+    </div>
+  </section>
+</div>
+
+<!-- =============== EMAILS =============== -->
+<div class="page" id="page-emails">
+  <section class="band">
+    <div class="wrap">
+      <h2 class="title">Email design</h2>
+      <p class="lede">Member newsletters and promotions I design in Constant Contact for the Fort Worth Museum of Science and History. Open any email to see the full design.</p>
+      <div class="emails" id="emails"></div>
+    </div>
+  </section>
+</div>
+
+<!-- =============== CONTACT =============== -->
+<div class="page" id="page-contact">
+  <section class="band contact">
+    <div class="wrap">
+      <h2 class="title">Let's work together</h2>
+      <p class="lede">Looking for someone to run your social, plan a campaign, or design your next email? I'd love to hear about it.</p>
+      <div class="btns" style="justify-content:center">
+        <a class="btn primary" href="mailto:tmphernandez@gmail.com">Email me</a>
+        <a class="btn" href="#experience">View experience</a>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  Taylor Pels-Hernandez, Fort Worth, TX. Site by <a href="https://gabby2251.github.io/websitesbygabby/" target="_blank" rel="noopener">Websites by Gabby</a>.
+</footer>
+
+<script>
+/* ================================================================
+   EDIT CONTENT HERE
+   ================================================================ */
+
+// Analytics: fill in each number as a string, e.g. "12.4K".
+// Leave "" and it shows a dash.
+const REELS = [
+  {
+    title: "Reel one",
+    url: "https://www.instagram.com/reel/DdFRlKKIV0b/",
+    note: "Add a sentence about the goal of this reel and what worked.",
+    stats: { Views: "", Reach: "", Likes: "", Comments: "", Shares: "", Saves: "" }
+  },
+  {
+    title: "Reel two",
+    url: "https://www.instagram.com/reel/DZYPc2Tv8bq/",
+    note: "Add a sentence about the goal of this reel and what worked.",
+    stats: { Views: "", Reach: "", Likes: "", Comments: "", Shares: "", Saves: "" }
+  }
+];
+
+// Chadra feed: add screenshots of posts, newest first.
+// e.g. { src: "images/chadra/01.jpg", alt: "Shawarma plate on the patio" }
+const CHADRA_POSTS = [];
+
+// Email designs
+const EMAILS = [
+  {
+    title: "July Member Insider",
+    blurb: "New member perk announcing a Match Point Coffee discount, plus Space Day and Omni Theater events.",
+    url: "https://conta.cc/4b1N1YQ",
+    img: "https://files.constantcontact.com/64ed715a001/823488b5-a9a8-4f6b-8a7f-434b757b59a5.png"
+  },
+  {
+    title: "August Newsletter",
+    blurb: "\u201cCheer for TCU inside the dome\u201d watch party, soundbath tickets, and Omni seat naming.",
+    url: "https://conta.cc/4pljDmg",
+    img: "https://files.constantcontact.com/64ed715a001/08af323f-f758-4a6f-b8b0-6f66f5c50c8f.png"
+  },
+  {
+    title: "Grandparents Day promo",
+    blurb: "A week-long $20-off membership offer spotlighting the Wonder Level membership.",
+    url: "https://conta.cc/4hrF2Id",
+    img: "https://files.constantcontact.com/64ed715a001/a31056d7-4172-4b4e-8d80-4338f56ffade.png"
+  }
+];
+
+/* ================================================================
+   RENDERING (no need to edit below)
+   ================================================================ */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.getElementById("reels").innerHTML = REELS.map(r => `
+  <article class="reel">
+    <div class="embed">
+      <blockquote class="instagram-media" data-instgrm-permalink="${esc(r.url)}" data-instgrm-version="14">
+        <a href="${esc(r.url)}" target="_blank" rel="noopener">Watch on Instagram</a>
+      </blockquote>
+    </div>
+    <div>
+      <h3>${esc(r.title)}</h3>
+      <p>${esc(r.note)}</p>
+      <div class="stats">
+        ${Object.entries(r.stats).map(([k,v]) => `<div class="stat"><b>${v ? esc(v) : "\u2013"}</b><span>${esc(k)}</span></div>`).join("")}
+      </div>
+    </div>
+  </article>`).join("");
+
+const feed = document.getElementById("feed");
+feed.innerHTML = CHADRA_POSTS.length
+  ? CHADRA_POSTS.map(p => `<div class="tile"><img src="${esc(p.src)}" alt="${esc(p.alt||"")}" loading="lazy"></div>`).join("")
+  : Array.from({length:9}, (_,i) => `<div class="tile">Post ${i+1}</div>`).join("");
+
+document.getElementById("emails").innerHTML = EMAILS.map(e => `
+  <a class="email" href="${esc(e.url)}" target="_blank" rel="noopener">
+    <div class="frame">
+      <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="shot"><img src="${esc(e.img)}" alt="" loading="lazy" onerror="this.remove()"></div>
+    </div>
+    <h3>${esc(e.title)}</h3>
+    <p>${esc(e.blurb)}</p>
+    <span class="view">Open email</span>
+  </a>`).join("");
+
+// Instagram embed script
+const ig = document.createElement("script");
+ig.src = "https://www.instagram.com/embed.js"; ig.async = true;
+document.body.appendChild(ig);
+
+// Simple hash router
+const pages = ["home","experience","analytics","chadra","emails","contact"];
+const menu = document.getElementById("menu");
+const menuBtn = document.querySelector(".menu-btn");
+function route(){
+  const id = pages.includes(location.hash.slice(1)) ? location.hash.slice(1) : "home";
+  pages.forEach(p => document.getElementById("page-"+p).classList.toggle("active", p === id));
+  document.querySelectorAll(".nav a.link").forEach(a =>
+    a.getAttribute("href") === "#"+id ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
+  menu.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false");
+  window.scrollTo(0,0);
+  if (id === "analytics" && window.instgrm) window.instgrm.Embeds.process();
+}
+window.addEventListener("hashchange", route);
+menuBtn.addEventListener("click", () => {
+  const open = menu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+route();
+</script>
+</body>
+</html>
