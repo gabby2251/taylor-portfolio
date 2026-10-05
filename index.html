@@ -186,8 +186,8 @@ a.phone{display:block;text-decoration:none}
 @media (max-width:860px){.email-row{grid-template-columns:1fr;max-width:380px;margin:0 auto}}
 
 /* ---------- artwork ---------- */
-.art-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:start}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.art-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;padding:1rem 0 2rem}
 .gallery .polaroid{padding:10px 10px 40px}
 .gallery .polaroid img{aspect-ratio:auto;height:auto}
 .gallery .polaroid:nth-child(odd){rotate:-2deg}
@@ -483,12 +483,11 @@ const EMAILS = [
     blurb:"A week-long $20-off membership offer featuring the Wonder Level membership." }
 ];
 
-// Artwork. Leave src "" to show a placeholder.
+// Artwork paintings.
 const ARTWORK = [
   { src:"images/art-1.jpg", alt:"Four-panel pop art portrait in pink, blue, purple, and yellow" },
-  { src:"images/art-2.jpg", alt:"Painted portrait of a woman in white sunglasses with a flower-covered swim cap" },
-  { src:"", alt:"" },
-  { src:"", alt:"" }
+  { src:"images/art-2.jpg", alt:"Painted portrait of a woman in white sunglasses with a flower-covered swim cap" }
+  // To add more, copy a line above, e.g. { src:"images/art-3.jpg", alt:"Short description" }
 ];
 
 /* =================================================================
