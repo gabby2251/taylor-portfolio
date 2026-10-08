@@ -174,14 +174,15 @@ a.phone{display:block;text-decoration:none}
 
 /* ---------- emails ---------- */
 .email-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
-.email{text-decoration:none;color:var(--ink);display:block}
+.email{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
 .email:nth-child(1) .polaroid{rotate:-3deg}
-.email:nth-child(2) .polaroid{rotate:2deg;margin-top:1.5rem}
+.email:nth-child(2) .polaroid{rotate:2deg;translate:0 1.4rem}
 .email:nth-child(3) .polaroid{rotate:-1.5deg}
 .email .polaroid{transition:rotate .25s,transform .25s}
 .email:hover .polaroid{rotate:0deg;transform:translateY(-6px)}
 .email .polaroid img{aspect-ratio:4/5;object-position:top;background:var(--pink-a)}
-.email p{margin-top:1.2rem;font-size:.97rem}
+.email p{margin-top:2.6rem;font-size:.97rem;flex:1}
+.email .open{margin-top:.6rem;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:860px){.email-row{grid-template-columns:1fr;max-width:380px;margin:0 auto}}
 
 /* ---------- artwork ---------- */
@@ -528,7 +529,8 @@ $("emailList").innerHTML = EMAILS.map(e => `
       <img src="${esc(e.img)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
       <figcaption class="cap cap-bold">${esc(e.title)}</figcaption>
     </figure>
-    <p>${esc(e.blurb)} <u>Open email</u></p>
+    <p>${esc(e.blurb)}</p>
+    <span class="open">Open email</span>
   </a>`).join("");
 
 $("gallery").innerHTML = ARTWORK.map(a => `
