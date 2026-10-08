@@ -304,15 +304,15 @@ footer a{color:var(--sun-b)}
       <div class="resume-grid">
         <div>
           <h3 class="sub">Experience</h3>
-          <div class="job"><h4>Marketing Coordinator</h4><div class="meta">Fort Worth Museum of Science and History, Nov 2025 to present</div>
+          <div class="job"><h4>Marketing Coordinator</h4><div class="meta">Fort Worth Museum of Science and History, Nov 2025 – Present</div>
             <p>Create and manage marketing campaigns, social media content, email communications, and promotional materials to engage the community and increase awareness of museum exhibits, programs, and events.</p></div>
-          <div class="job"><h4>NextGen Ambassador</h4><div class="meta">City of Fort Worth Water Department, Jun to Aug 2025</div>
+          <div class="job"><h4>NextGen Ambassador</h4><div class="meta">City of Fort Worth Water Department, Jun – Aug 2025</div>
             <p>Created graphics for social media channels. Promoted water conservation and community engagement. Played key role in planning a community event. Learned how the local government builds connections with residents. Provided customer support in a high-volume call center.</p></div>
-          <div class="job"><h4>Marketing Intern</h4><div class="meta">empowerHER, remote, Jan to Jun 2023</div>
+          <div class="job"><h4>Marketing Intern</h4><div class="meta">empowerHER, remote, Jan – Jun 2023</div>
             <p>Guided the rebranding efforts. Enhanced visibility and resonance with target audience. Amplified impact and mission. Transformation and revitalized image. Fostered deeper connections with stakeholders. Increased support and engagement for their noble cause.</p></div>
-          <div class="job"><h4>Social Media Manager</h4><div class="meta">The N2 Company, Fort Worth, Jun 2021 to Mar 2023</div>
+          <div class="job"><h4>Social Media Manager</h4><div class="meta">The N2 Company, Fort Worth, Jun 2021 – Mar 2023</div>
             <p>Oversaw social media accounts' design (e.g. Facebook timeline cover, profile pictures and blog layout). Collaborated with other teams to ensure brand consistency. Analyzed company's digital marketing plan and social media strategy. Identified strategic weaknesses and made recommendations for improvements.</p></div>
-          <div class="job"><h4>Social Media Manager</h4><div class="meta">Sun Lily Enterprises, Fort Worth, May 2020 to present</div>
+          <div class="job"><h4>Social Media Manager</h4><div class="meta">Sun Lily Enterprises, Fort Worth, May 2020 – Present</div>
             <p>Designed and implemented social media strategy to align with business goals. Researched social media trends. Informed management of changes that are relevant to the company's marketing activities.</p></div>
         </div>
         <div>
@@ -328,13 +328,13 @@ footer a{color:var(--sun-b)}
           </ul>
           <h3 class="sub">Affiliations</h3>
           <ul class="side-list">
-            <li>House Parent, The Warm Place<small>2025 to present</small></li>
-            <li>Board Member, Hispanic Women's Network of Texas<small>2022 to present</small></li>
-            <li>MANA de North Texas<small>2022 to present</small></li>
-            <li>empowerHER<small>2020 to present</small></li>
-            <li>Director, Delta Gamma<small>2023 to 2025</small></li>
-            <li>UNT Women in Business<small>2023 to 2025</small></li>
-            <li>MOVE Texas UNT<small>2024 to 2025</small></li>
+            <li>House Parent, The Warm Place<small>2025 – Present</small></li>
+            <li>Board Member, Hispanic Women's Network of Texas<small>2022 – Present</small></li>
+            <li>MANA de North Texas<small>2022 – Present</small></li>
+            <li>empowerHER<small>2020 – Present</small></li>
+            <li>Director, Delta Gamma<small>2023 – 2025</small></li>
+            <li>UNT Women in Business<small>2023 – 2025</small></li>
+            <li>MOVE Texas UNT<small>2024 – 2025</small></li>
           </ul>
         </div>
       </div>
@@ -345,7 +345,6 @@ footer a{color:var(--sun-b)}
 <!-- ================= WORK ================= -->
 <section class="work-intro" id="work">
   <div class="wrap">
-    <p class="hand rv" style="color:var(--pink-b)">let's dive right in</p>
     <h2 class="display rv">My work</h2>
     <p class="rv work-sub">Content, campaigns, and emails built to make people stop scrolling and start showing up.</p>
     <div class="jump rv">
@@ -370,7 +369,7 @@ footer a{color:var(--sun-b)}
   <div class="wrap">
     <div class="section-head rv-l">
       <h2 class="display">Chadra Mezza &amp; Grill</h2>
-      <p>I run the Instagram for Chadra, a family-owned Lebanese and Mediterranean restaurant on Park Place Avenue in Fort Worth's Near Southside. Here's how the feed comes together.</p>
+      <p>I run the Instagram for Chadra, a family-owned Lebanese and Mediterranean restaurant in Fort Worth. Here's how the feed comes together.</p>
     </div>
     <div class="ig rv">
       <div class="ig-top">
@@ -468,7 +467,11 @@ const FUN_FACTS = [
 // Chadra feed screenshots, newest first: { src:"images/01.jpg", alt:"..." }
 const CHADRA_POSTS = [
   { src:"images/01.jpg", alt:"Mezze board piled with fruit, cheeses, cured meats, and roses" },
-  { src:"images/02.jpg", alt:"Smiling guest holding a grilled wrap with fries at Chadra" }
+  { src:"images/02.jpg", alt:"Smiling guest holding a grilled wrap with fries at Chadra" },
+  { src:"images/03.jpg", alt:"Guest serving a plate from Chadra's catered buffet" },
+  { src:"images/04.jpg", alt:"Friends sharing dinner and wine in Chadra's dining room" },
+  { src:"images/05.jpg", alt:"Close-up of a grazing board with fruit, cheeses, olives, and marigolds" },
+  { src:"images/06.jpg", alt:"Guests lining up at a Chadra catering spread" }
 ];
 
 const EMAILS = [
@@ -524,7 +527,7 @@ $("emailList").innerHTML = EMAILS.map(e => `
   <a class="email rv" href="${esc(e.url)}" target="_blank" rel="noopener">
     <figure class="polaroid tape">
       <img src="${esc(e.img)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
-      <figcaption class="cap">${esc(e.title)}</figcaption>
+      <figcaption class="cap cap-bold">${esc(e.title)}</figcaption>
     </figure>
     <p>${esc(e.blurb)} <u>Open email</u></p>
   </a>`).join("");
